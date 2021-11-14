@@ -18,8 +18,8 @@ def roughly_equal_bool(img, rgb, diff_limit=150):
     return bool_map
 
 if __name__ == "__main__":
-    img_dir = r'16zoom/OSM_512'
-    # img_dir = r'temp'
+    # img_dir = r'16zoom-11.02/OSM/osm_18'
+    img_dir = r'temp'
     min_area = 16
 
     img_paths = []
@@ -29,11 +29,11 @@ if __name__ == "__main__":
                 continue
             if not '-o-' in file:
                 continue
-            if '_' in file:
-                continue            
+            # if '_' in file:
+            #     continue            
             img_paths.append(os.path.join(root, file))
 
-    img_paths = [r'16zoom\OSM_512\29.35345166863501-48.0157470703125-16-USELESS-USELESS-512-USELESS-o-lbl0.png']
+    # img_paths = [r'16zoom-11.02/OSM_512\29.35345166863501-48.0157470703125-16-USELESS-USELESS-512-USELESS-o-lbl0.png']
     for img_i, img_path in enumerate(tqdm.tqdm(img_paths)):
         # if img_i > 50:
         #     break
@@ -44,14 +44,19 @@ if __name__ == "__main__":
             bi_img = np.zeros(img.shape[:2], dtype=np.bool)
             # road颜色
             road_color_rgb_lst = [
+                # (255, 255, 255), # 白色道路中间
+                # (254, 253, 215), # 黄色道路
+                # (253, 235, 206),
+                # (255, 237, 193),
+                # (254, 240, 205),
+                # (255, 233, 165), # 橙色道路
+                # (251, 219, 152),
+                # new color value
                 (255, 255, 255), # 白色道路中间
-                (254, 253, 215), # 黄色道路
-                (253, 235, 206),
-                (255, 237, 193),
-                (254, 240, 205),
-                (255, 233, 165), # 橙色道路
-                (251, 219, 152),
-
+                (249, 178, 156), # 橙色道路
+                (252, 214, 164), # 土黄色道路
+                (247, 250, 191), # 黄绿色道路
+                (232, 146, 162), # 玫红色道路
             ]
             for road_color in road_color_rgb_lst:
                 limit = 40
@@ -65,7 +70,7 @@ if __name__ == "__main__":
             # 
             bi_img_bg = np.zeros(img.shape[:2], dtype=np.bool)
             bg_color_rgb_lst = [
-
+                (255, 255, 229),
 
             ]
             for bg_color in bg_color_rgb_lst:

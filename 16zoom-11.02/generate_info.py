@@ -474,10 +474,10 @@ def get_raw_lat_long(mask_path):
     
 
 if __name__ == "__main__":
-    img_dir = r'16zoom\Bing_512' # 第一次运行这个
+    img_dir = r'16zoom-11.02/Bing/bing_18' # 第一次运行这个
     # img_dir = r'16zoom\Google_1024' # 第二次运行这个
     # img_dir = r'16zoom\OSM_512' # 第三次运行这个
-    img_dir = r'temp'
+    # img_dir = r'temp'
     img_paths = []
     for root, dirs, files in os.walk(img_dir):
         for file in files:

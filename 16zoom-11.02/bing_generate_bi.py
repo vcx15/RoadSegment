@@ -17,19 +17,20 @@ def roughly_equal_bool(img, rgb, diff_limit=150):
     return bool_map
 
 if __name__ == "__main__":
-    img_dir = r'Bing_16ZoomLevel'
+    img_dir = r'16zoom-11.02/Bing/bing_18'
     # img_dir = r'test'
     min_area = 32
 
     img_paths = []
     for root, dirs, files in os.walk(img_dir):
+        print(root)
         for file in files:
             if '_bi' in file and '_bi' in file.replace('_bi', '', 1) or 'vis' in file or 'color' in file:
                 continue
             if not '-b-' in file:
                 continue
-            if '_' in file:
-                continue
+            # if '_' in file:
+            #     continue
             img_paths.append(os.path.join(root, file))
 
     # img_paths = [r'16zoom\Bing_512\25.943226785322437-51.339111328125-16-USELESS-USELESS-512-USELESS-b-lbl0.png']

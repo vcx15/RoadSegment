@@ -18,7 +18,7 @@ def roughly_equal_bool(img, rgb, diff_limit=150):
 
 if __name__ == "__main__":
     img_dir = r'16zoom/Google_1024'
-    img_dir = r'temp'
+    # img_dir = r'temp'
     min_area = -1
 
     img_paths = []

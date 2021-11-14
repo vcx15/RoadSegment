@@ -3,7 +3,7 @@ import shutil
 import tqdm
 
 #img_dir_lst = [r'16zoom\Bing_512', r'16zoom\Google_1024', r'16zoom\OSM_512']
-img_dir_lst = [ r'16zoom\OSM_512']
+img_dir_lst = [ r'16zoom-11.02/Bing/bing_18']
 
 
 for img_dir in img_dir_lst:

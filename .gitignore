@@ -1,0 +1,6 @@
+*.png
+*.pyc
+*.xlsx
+*.xls
+.vscode
+test.py
